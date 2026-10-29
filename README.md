@@ -4,7 +4,8 @@
 [![Dart](https://img.shields.io/badge/Dart-3.x-0175C2?logo=dart&logoColor=white)](https://dart.dev)
 [![Supabase](https://img.shields.io/badge/Backend-Supabase-3ECF8E?logo=supabase&logoColor=white)](https://supabase.com)
 [![Platform](https://img.shields.io/badge/Platform-Android%20%7C%20iOS%20%7C%20Web%20%7C%20Windows-blue)](https://flutter.dev)
-[![Release](https://img.shields.io/badge/Release-v1.0.0--APK-success)](https://github.com/EdlaAbhishek/UDF-app/releases)
+[![Direct APK Download](https://img.shields.io/badge/Download-APK%20(56%20MB)-brightgreen?logo=android)](https://github.com/EdlaAbhishek/UDF-app/releases/download/v1.0.0/app-release.apk)
+[![Release](https://img.shields.io/badge/Release-v1.0.0--APK-success)](https://github.com/EdlaAbhishek/UDF-app/releases/tag/v1.0.0)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 **Khushi Hygieia** is a next-generation, multilingual healthcare mobile application designed to bridge critical gaps in healthcare accessibility across urban and rural communities. It features intelligent AI triage, real-time OPD queue management, ABHA-compliant health records vault, family care circles, medication adherence tracking, and instant emergency dispatch.
@@ -28,13 +29,13 @@
 
 If you are a **tester, doctor, patient, or evaluator**, you do **NOT** need to install Flutter or build any code. You can directly install the pre-compiled standalone Android APK (`app-release.apk`) on your phone!
 
-### 📥 1. Getting the APK File
-- **From GitHub Releases**: Go to [GitHub Releases (v1.0.0)](https://github.com/EdlaAbhishek/UDF-app/releases) and download `app-release.apk`.
-- **From Local Build**: If cloned locally, the compiled binary is located at:
-  ```
-  build/app/outputs/flutter-apk/app-release.apk
-  ```
-  *(Size: ~56 MB | Universal release supporting all standard Android architectures: `arm64-v8a`, `armeabi-v7a`, `x86_64`)*
+### 📥 1. Direct One-Click Download
+👉 **[Download app-release.apk directly](https://github.com/EdlaAbhishek/UDF-app/releases/download/v1.0.0/app-release.apk)** *(56 MB)*
+
+You can also view the full release notes at [GitHub Releases v1.0.0](https://github.com/EdlaAbhishek/UDF-app/releases/tag/v1.0.0).
+
+- **Local Build Location**: `build/app/outputs/flutter-apk/app-release.apk`
+- **Compatibility**: Universal release supporting all standard Android architectures: `arm64-v8a`, `armeabi-v7a`, `x86_64` (Android 5.0+)
 
 ---
 
