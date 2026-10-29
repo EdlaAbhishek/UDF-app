@@ -4,6 +4,7 @@
 [![Dart](https://img.shields.io/badge/Dart-3.x-0175C2?logo=dart&logoColor=white)](https://dart.dev)
 [![Supabase](https://img.shields.io/badge/Backend-Supabase-3ECF8E?logo=supabase&logoColor=white)](https://supabase.com)
 [![Platform](https://img.shields.io/badge/Platform-Android%20%7C%20iOS%20%7C%20Web%20%7C%20Windows-blue)](https://flutter.dev)
+[![Release](https://img.shields.io/badge/Release-v1.0.0--APK-success)](https://github.com/EdlaAbhishek/UDF-app/releases)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 **Khushi Hygieia** is a next-generation, multilingual healthcare mobile application designed to bridge critical gaps in healthcare accessibility across urban and rural communities. It features intelligent AI triage, real-time OPD queue management, ABHA-compliant health records vault, family care circles, medication adherence tracking, and instant emergency dispatch.
@@ -11,16 +12,61 @@
 ---
 
 ## 📑 Table of Contents
-1. [Key Features](#-key-features)
-2. [App Architecture](#-app-architecture)
-3. [Prerequisites](#-prerequisites)
-4. [Step-by-Step Installation Guide](#-step-by-step-installation-guide)
-5. [Running the Application](#-running-the-application)
-6. [Building for Production (Android APK / AAB)](#-building-for-production-android-apk--aab)
-7. [Environment Configuration](#-environment-configuration)
-8. [Demo Test Credentials](#-demo-test-credentials)
-9. [Project Directory Structure](#-project-directory-structure)
-10. [Troubleshooting & Common Issues](#-troubleshooting--common-issues)
+1. [📲 Quick Install via Pre-built APK (No Coding Required)](#-quick-install-via-pre-built-apk-no-coding-required)
+2. [✨ Key Features](#-key-features)
+3. [🏗️ App Architecture](#️-app-architecture)
+4. [💻 Developer Setup: Build & Run from Source](#-developer-setup-build--run-from-source)
+5. [📦 Generating New Release APK & App Bundle](#-generating-new-release-apk--app-bundle)
+6. [⚙️ Environment Configuration](#️-environment-configuration)
+7. [🔑 Demo Test Credentials](#-demo-test-credentials)
+8. [📁 Project Directory Structure](#-project-directory-structure)
+9. [❓ Troubleshooting & Common Issues](#-troubleshooting--common-issues)
+
+---
+
+## 📲 Quick Install via Pre-built APK (No Coding Required)
+
+If you are a **tester, doctor, patient, or evaluator**, you do **NOT** need to install Flutter or build any code. You can directly install the pre-compiled standalone Android APK (`app-release.apk`) on your phone!
+
+### 📥 1. Getting the APK File
+- **From GitHub Releases**: Go to [GitHub Releases (v1.0.0)](https://github.com/EdlaAbhishek/UDF-app/releases) and download `app-release.apk`.
+- **From Local Build**: If cloned locally, the compiled binary is located at:
+  ```
+  build/app/outputs/flutter-apk/app-release.apk
+  ```
+  *(Size: ~56 MB | Universal release supporting all standard Android architectures: `arm64-v8a`, `armeabi-v7a`, `x86_64`)*
+
+---
+
+### 📱 2. How to Install on Any Android Phone (Step-by-Step)
+
+#### Step 1: Transfer or Download to Phone
+- Download `app-release.apk` directly on your phone using Chrome, OR
+- Transfer it from your computer to your phone via USB cable, Google Drive, WhatsApp, or Telegram.
+
+#### Step 2: Open the APK
+- Open your phone's **Files**, **File Manager**, or **Downloads** folder.
+- Tap on `app-release.apk`.
+
+#### Step 3: Enable "Install Unknown Apps" (One-Time Android Permission)
+- If Android blocks the installation with a warning:
+  > *"For your security, your phone is not allowed to install unknown apps from this source."*
+- Tap **Settings** on the prompt.
+- Toggle **Allow from this source** to **ON**.
+- Press the **Back** button.
+
+#### Step 4: Complete Installation
+- Tap **Install**.
+- Once installed, tap **Open** to launch **Khushi Hygieia**!
+
+---
+
+### 💻 3. Quick Install via Computer (ADB - One Command)
+If you have an Android device connected to your PC with **USB Debugging** enabled:
+```bash
+# Install new or reinstall existing app without losing data
+adb install -r build/app/outputs/flutter-apk/app-release.apk
+```
 
 ---
 
@@ -56,119 +102,70 @@ lib/
 
 ---
 
-## 📋 Prerequisites
+## 💻 Developer Setup: Build & Run from Source
 
-Before running the app, ensure your development machine has:
+### Prerequisites
+1. **Flutter SDK** (`v3.0.0` or higher) from [flutter.dev](https://docs.flutter.dev/get-started/install).
+2. **Dart SDK** (included with Flutter).
+3. **Android Studio** or **VS Code** with Flutter and Dart extensions.
+4. **Git** in your system `PATH`.
 
-1. **Flutter SDK** (`v3.0.0` or higher):
-   - Check version:
-     ```bash
-     flutter --version
-     ```
-   - If not installed, download from [flutter.dev](https://docs.flutter.dev/get-started/install).
-
-2. **Dart SDK** (included automatically with Flutter).
-
-3. **Android Studio** or **VS Code**:
-   - For VS Code: Install the **Flutter** and **Dart** extensions.
-   - For Android Studio: Install the Flutter plugin and Android SDK Command-line Tools.
-
-4. **Git**: Installed and available in your system `PATH`.
-
-5. **A Device to Run On**:
-   - An Android Emulator (configured via Android Studio AVD Manager), OR
-   - A physical Android phone with **USB Debugging** enabled, OR
-   - Google Chrome (for Flutter Web), OR
-   - Windows desktop environment.
-
----
-
-## 🚀 Step-by-Step Installation Guide
-
-### Step 1: Clone the Repository
+### Step-by-Step Build Commands
 ```bash
+# 1. Clone the repository
 git clone https://github.com/EdlaAbhishek/UDF-app.git
 cd UDF-app
-```
 
-### Step 2: Verify Flutter Environment
-Run Flutter doctor to check if all necessary toolchains are ready:
-```bash
+# 2. Check Flutter environment health
 flutter doctor
-```
-Ensure Android toolchain and connected devices checkmarks are green.
 
-### Step 3: Fetch Dependencies
-Download all required Flutter packages and libraries:
-```bash
+# 3. Download dependencies
 flutter pub get
-```
 
-### Step 4: Validate Code Health
-Verify that there are no compilation or lint warnings:
-```bash
+# 4. Run static analysis
 flutter analyze
 ```
 
----
-
-## 📱 Running the Application
-
-### Option A: Run on Connected Android Device or Emulator
-1. Connect your Android phone via USB (with USB Debugging turned on) or launch an Android emulator from Android Studio.
-2. Verify device detection:
-   ```bash
-   flutter devices
-   ```
-3. Run the app:
-   ```bash
-   flutter run
-   ```
-
-### Option B: Run on Web (Google Chrome)
-```bash
-flutter run -d chrome
-```
-
-### Option C: Run on Windows Desktop
-```bash
-flutter run -d windows
-```
-
-### Option D: Run with Hot Reload in VS Code
-1. Open the project folder in VS Code.
-2. Press `F5` or click **Run > Start Debugging**.
-3. Use `r` in the debug console for hot reload, or `R` for hot restart.
+### Running on Devices
+- **Connected Android Phone / Emulator**:
+  ```bash
+  flutter run
+  ```
+- **Google Chrome (Web)**:
+  ```bash
+  flutter run -d chrome
+  ```
+- **Windows Desktop**:
+  ```bash
+  flutter run -d windows
+  ```
 
 ---
 
-## 📦 Building for Production (Android APK / AAB)
+## 📦 Generating New Release APK & App Bundle
 
-### 1. Build Android Release APK
-To create a standalone installable APK:
+Whenever you update the code and want to generate an updated APK:
+
 ```bash
+# 1. Clean previous build artifacts
+flutter clean
+
+# 2. Re-fetch packages
+flutter pub get
+
+# 3. Build optimized release APK
 flutter build apk --release
 ```
 The output file will be generated at:
 ```
 build/app/outputs/flutter-apk/app-release.apk
 ```
-You can transfer and install this APK directly onto any Android phone.
 
-### 2. Build Android App Bundle (for Google Play Store)
+To build a Google Play Store App Bundle (`.aab`):
 ```bash
 flutter build appbundle --release
+# Generated at: build/app/outputs/bundle/release/app-release.aab
 ```
-The output bundle will be located at:
-```
-build/app/outputs/bundle/release/app-release.aab
-```
-
-### 3. Build Web Bundle
-```bash
-flutter build web --release
-```
-Output files will be in `build/web/`.
 
 ---
 
@@ -240,26 +237,20 @@ UDF-app/
 
 ## ❓ Troubleshooting & Common Issues
 
-### 1. `flutter pub get` Fails
+### 1. "App Not Installed" on Android
+- If an older or debug version with a different signing key is already installed on your phone, uninstall the existing app first, then install `app-release.apk`.
+- Ensure your phone has at least 150 MB of free storage.
+
+### 2. "Install Unknown Apps" Blocked by Play Protect
+- When Google Play Protect pops up, tap **More details** and select **Install anyway**.
+
+### 3. `flutter pub get` Fails
 - Ensure your internet connection is active.
 - Run `flutter clean` then retry `flutter pub get`.
 
-### 2. Android Gradle Build Fails
-- Check that Android SDK licenses are accepted:
-  ```bash
-  flutter doctor --android-licenses
-  ```
-- Make sure JDK 17 or JDK 21 is configured in Android Studio.
-
-### 3. Device Not Detected
-- For physical devices: Ensure **Developer Options** and **USB Debugging** are enabled on your Android phone.
-- Verify ADB detects the device:
-  ```bash
-  adb devices
-  ```
-
-### 4. OpenRouter AI Chat Offline Warning
-- If you haven't provided an `OPENROUTER_API_KEY`, the app gracefully displays structured clinical guidance and medical safety advice through its offline fallback engine.
+### 4. Device Not Detected via USB
+- Ensure **Developer Options** and **USB Debugging** are enabled on your Android phone.
+- Verify ADB detects the device using `adb devices`.
 
 ---
 
